@@ -1,6 +1,14 @@
+#ifndef __SENSOR_VALIDATE_H
+#define __SENSOR_VALIDATE_H
 
-bool _give_me_a_good_name(double value, double nextValue, double maxDelta);
+#define MAX_SOC_DELTA      0.5
+#define MAX_CURRENT_DELTA  0.1
 
+bool withInDelta(double value, double nextValue, double maxDelta);
+bool validateReadings(double* values, int numOfValues, double maxDelta);
 bool validateSOCreadings(double* values, int numOfValues);
+bool validateCurrentreadings(double* values, int numOfValues);  
 
-bool validateCurrentreadings(double* values, int numOfValues);
+
+
+#endif
